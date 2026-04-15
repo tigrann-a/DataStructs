@@ -68,7 +68,12 @@ public class MyLinkedList<T> : ICollection<T>
 
     public bool Remove(T item)
     {
-        throw new NotImplementedException();
+        MyLinkedListNode<T> current = Head;
+        while(current != null)
+        {
+            Console.WriteLine(current);
+            current = current.Next;
+        }
     }
 
     IEnumerator IEnumerable.GetEnumerator()
