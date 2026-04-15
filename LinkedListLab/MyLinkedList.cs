@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace LinkedListLab;
 
@@ -69,11 +70,24 @@ public class MyLinkedList<T> : ICollection<T>
     public bool Remove(T item)
     {
         MyLinkedListNode<T> current = Head;
-        while(current != null)
+        while (current != null)
         {
-            Console.WriteLine(current);
+            if (current.Value.Equals(item))
+            {
+                if (current == Head)
+                {
+                    RemoveFirst();
+                }
+                else if (current == Tail)
+                {
+                    RemoveLast();
+                }
+
+            }
             current = current.Next;
         }
+
+        return false;
     }
 
     IEnumerator IEnumerable.GetEnumerator()
@@ -121,16 +135,11 @@ public class MyLinkedList<T> : ICollection<T>
 
     #region Remove
 
-    public void RemoveFirst(T item)
+    public void RemoveFirst()
     {
-        RemoveFirst();
-    }
-
-    private void RemoveFirst()
-    {
-        if(Head == null)
+        if (Head == null)
         {
-            return
+            return;
         }
 
         MyLinkedListNode<T> temp = Head;
@@ -139,22 +148,17 @@ public class MyLinkedList<T> : ICollection<T>
         Count--;
     }
 
-    public void RemoveLast(T item)
-    {
-        RemoveLast();
-    }
-
-    private void RemoveLast()
+    public void RemoveLast()
     {
         if(Head == null)
         {
-            return
+            return;
         }
         if(Head.Next == null)
         {
             Head = null;
             Tail = null;
-            return
+            return;
         }
 
         MyLinkedListNode<T> current = Head;
@@ -165,6 +169,44 @@ public class MyLinkedList<T> : ICollection<T>
 
         current.Next = null;
         Tail = current;
+    }
+
+    public MyLinkedList<T> RemoveKthNodeFromEnd(MyLinkedList<T> list, int k)
+    {
+        if(k <= 0 || k > list.Count)
+        {
+            return list;
+        }
+
+        MyLinkedListNode<T> current = Head;
+
+        int count = list.Count - k;
+
+        while (current != null)
+        {
+            if(i == count)
+            {
+                if(current == Head)
+                {
+                    RemoveFirst();
+                }
+                else if(current == Tail)
+                {
+                    RemoveLast();
+                }
+                else
+                {
+                    MyLinkedListNode<T> temp = current.Next;
+                    current.Next = temp.Next;
+                    temp.Next = null;
+                    Count--;
+                }
+            }
+            current = current.Next;
+            i++;
+        }
+
+        return list;
     }
 
     #endregion

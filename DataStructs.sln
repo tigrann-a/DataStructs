@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.37012.4 d17.14
+VisualStudioVersion = 17.14.37012.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListLab", "LinkedListLab\LinkedListLab.csproj", "{D0E56E0C-6065-4670-8C3E-7A6C6B5BA03D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListLib", "LinkedListLab\LinkedListLib.csproj", "{D0E56E0C-6065-4670-8C3E-7A6C6B5BA03D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructs_Console", "DataStructs_Console\DataStructs_Console.csproj", "{187D517F-C70B-4D0E-A648-03DB8E15BB03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStackLib", "MyStackLibrary\MyStackLib.csproj", "{351B5D11-6561-43B1-80FB-852BC32A935D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostfixCalc", "PostfixCalc\PostfixCalc.csproj", "{5C7561D5-3A8E-455D-8F7F-981C72893AD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{D0E56E0C-6065-4670-8C3E-7A6C6B5BA03D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0E56E0C-6065-4670-8C3E-7A6C6B5BA03D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0E56E0C-6065-4670-8C3E-7A6C6B5BA03D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{187D517F-C70B-4D0E-A648-03DB8E15BB03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{187D517F-C70B-4D0E-A648-03DB8E15BB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{187D517F-C70B-4D0E-A648-03DB8E15BB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{187D517F-C70B-4D0E-A648-03DB8E15BB03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{351B5D11-6561-43B1-80FB-852BC32A935D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{351B5D11-6561-43B1-80FB-852BC32A935D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{351B5D11-6561-43B1-80FB-852BC32A935D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{351B5D11-6561-43B1-80FB-852BC32A935D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C7561D5-3A8E-455D-8F7F-981C72893AD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C7561D5-3A8E-455D-8F7F-981C72893AD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C7561D5-3A8E-455D-8F7F-981C72893AD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C7561D5-3A8E-455D-8F7F-981C72893AD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
