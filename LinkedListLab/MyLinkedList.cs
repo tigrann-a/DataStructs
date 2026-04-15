@@ -40,7 +40,20 @@ public class MyLinkedList<T> : ICollection<T>
 
     public void CopyTo(T[] array, int arrayIndex)
     {
-        
+        if(array == null)
+            throw new ArgumentNullException("array is null");
+        if(arrayIndex < 0)
+            throw new ArgumentOutOfRangeException("index is negative");
+        if (array.Length - arrayIndex < Count)
+            throw new IndexOutOfRangeException();
+
+        MyLinkedListNode<T> current = Head;
+        while(current != null)
+        {
+            array[arrayIndex] = current.Value;
+            arrayIndex++;
+            current = current.Next;
+        }
     }
 
     public IEnumerator<T> GetEnumerator()
@@ -102,5 +115,52 @@ public class MyLinkedList<T> : ICollection<T>
     #endregion
 
     #region Remove
+
+    public void RemoveFirst(T item)
+    {
+        RemoveFirst();
+    }
+
+    private void RemoveFirst()
+    {
+        if(Head == null)
+        {
+            return
+        }
+
+        MyLinkedListNode<T> temp = Head;
+        Head = Head.Next;
+        temp.Next = null;
+        Count--;
+    }
+
+    public void RemoveLast(T item)
+    {
+        RemoveLast();
+    }
+
+    private void RemoveLast()
+    {
+        if(Head == null)
+        {
+            return
+        }
+        if(Head.Next == null)
+        {
+            Head = null;
+            Tail = null;
+            return
+        }
+
+        MyLinkedListNode<T> current = Head;
+        while( current.Next != Tail )
+        {
+            current = current.Next;
+        }
+
+        current.Next = null;
+        Tail = current;
+    }
+
     #endregion
 }
