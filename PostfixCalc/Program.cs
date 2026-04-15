@@ -15,7 +15,6 @@ foreach (string token in input)
     {
         int right = values.Pop();
         int left = values.Pop();
-        
 
         switch (token)
         {

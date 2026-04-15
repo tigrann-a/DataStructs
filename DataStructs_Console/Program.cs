@@ -10,7 +10,7 @@ list.RemoveFirst();
 
 //list.Remove(2);
 
-RemoveKthNodeFromEnd(list, 2);
+//RemoveKthNodeFromEnd(list, 2);
 
 MyLinkedListNode<int> current = list.Head;
 while (current != null)

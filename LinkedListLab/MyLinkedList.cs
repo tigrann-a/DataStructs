@@ -171,43 +171,12 @@ public class MyLinkedList<T> : ICollection<T>
         Tail = current;
     }
 
-    public MyLinkedList<T> RemoveKthNodeFromEnd(MyLinkedList<T> list, int k)
-    {
-        if(k <= 0 || k > list.Count)
-        {
-            return list;
-        }
+    //public MyLinkedList<T> RemoveKthNodeFromEnd(MyLinkedList<T> list, int k)
+    //{
+        
 
-        MyLinkedListNode<T> current = Head;
+    //}
 
-        int count = list.Count - k;
-
-        while (current != null)
-        {
-            if(i == count)
-            {
-                if(current == Head)
-                {
-                    RemoveFirst();
-                }
-                else if(current == Tail)
-                {
-                    RemoveLast();
-                }
-                else
-                {
-                    MyLinkedListNode<T> temp = current.Next;
-                    current.Next = temp.Next;
-                    temp.Next = null;
-                    Count--;
-                }
-            }
-            current = current.Next;
-            i++;
-        }
-
-        return list;
-    }
 
     #endregion
 }
