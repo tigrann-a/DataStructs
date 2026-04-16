@@ -69,24 +69,21 @@ public class MyLinkedList<T> : ICollection<T>
 
     public bool Remove(T item)
     {
+        MyLinkedListNode<T>? prev = null;
         MyLinkedListNode<T> current = Head;
-        while (current != null)
+        
+        while(current != null)
         {
+            
             if (current.Value.Equals(item))
             {
-                if (current == Head)
-                {
-                    RemoveFirst();
-                }
-                else if (current == Tail)
-                {
-                    RemoveLast();
-                }
-
+                current = current.Next;
+                prev.Next = current;
+                return true;
             }
+            prev = current;
             current = current.Next;
         }
-
         return false;
     }
 
@@ -144,6 +141,7 @@ public class MyLinkedList<T> : ICollection<T>
 
         MyLinkedListNode<T> temp = Head;
         Head = Head.Next;
+        
         temp.Next = null;
         Count--;
     }
