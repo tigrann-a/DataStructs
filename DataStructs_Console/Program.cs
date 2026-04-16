@@ -8,7 +8,7 @@ list.AddLast(3);
 
 //list.RemoveFirst();
 
-list.Remove(3);
+list.Remove(2);
 
 //RemoveKthNodeFromEnd(list, 2);
 
