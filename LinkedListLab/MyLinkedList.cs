@@ -68,13 +68,18 @@ public class MyLinkedList<T> : ICollection<T>
     }
 
     public bool Remove(T item)
-    { 
+    {
+        // եթե list-ը դատարկ է, ապա վերադարձնել false
+        if (Head == null)
+        {
+            return false;
+        }
+
         MyLinkedListNode<T>? prev = null;
         MyLinkedListNode<T> current = Head;
         
         while(current != null)
         {
-            
             if (current.Value.Equals(item))
             {
                 if (Head.Next == null)
@@ -83,17 +88,22 @@ public class MyLinkedList<T> : ICollection<T>
                     Tail = null;
                 }
                 else if (current == Head)
+                {
                     Head = Head.Next;
-                else if(current == Tail)
+                }
+                else if (current == Tail)
+                {
                     Tail = prev;
+                    prev.Next = null;
+                }
                 else
                 {
                     prev.Next = current.Next;
                 }
 
-                Count--;
-                return true;
-            }
+                    Count--;
+                    return true;
+                }
 
             prev = current;
             current = current.Next;
