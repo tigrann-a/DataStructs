@@ -197,18 +197,23 @@ public class MyLinkedList<T> : ICollection<T>
     public MyLinkedList<T> RemoveKthNodeFromEnd(MyLinkedList<T> list, int k)
     {
         int length = Count - k;
-        int counter = 0;
+        int counter = 1;
         MyLinkedListNode<T> current = list.Head;
+        MyLinkedListNode<T>? temp = null;
 
-        while(current != null)
+        while (current != null)
         {
             if (counter == length)
             {
-                list.Remove(current.Value);
+                Head = current.Next;
+                current = null;
+                Count -= length;
+                return list;
             }
             counter++;
             current = current.Next;
         }
+
         return list;
     }
 

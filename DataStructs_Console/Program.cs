@@ -24,8 +24,8 @@ list.AddLast(9);
 
 // 2. RemoveKthNodeFromEnd
 
-MyLinkedList<int> newList = list.RemoveKthNodeFromEnd(list, 2);
-Console.WriteLine(newList);
+MyLinkedList<int> newList = list.RemoveKthNodeFromEnd(list, 1);
+//Console.WriteLine(newList);
 
 foreach (var node in list)
     Console.WriteLine(node);
