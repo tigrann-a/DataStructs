@@ -1,14 +1,14 @@
-﻿// 5 6 7 * 1 -
+﻿// 5 6 7 * + 1 -
 
 using MyStackLibrary;
-using System.Collections.Generic;
 
-string[] input = new string[] { "5", "6", "7", "*", "1", "-" };
+string[] input = new string[] { "5", "6", "7", "*", "+", "1", "-" };
 MyStack<int> values = new MyStack<int>();
 
 foreach (string token in input)
 {
     int value = 0;
+    // եթե ոկենը ամբողջ թիվ է, ապա այն ավելացվում է stack-ում, հակառակ դեպքում՝ այն պետք է լինի օպերատոր, որի դեպքում stack- ից հանվում են երկու արժեքներ, կատարվում է համապատասխան գործողությունը և արդյունքը դրվում stack- ում:
     if (int.TryParse(token, out value))
         values.Push(value);
     else
@@ -36,3 +36,9 @@ foreach (string token in input)
     }
 
 }
+
+int answer = values.Pop();
+
+Console.WriteLine(answer);
+
+
