@@ -28,9 +28,9 @@ public class MyLinkedList<T> : ICollection<T>
     public bool Contains(T item)
     {
         MyLinkedListNode<T> current = Head;
-        while(current != null)
+        while (current != null)
         {
-            if(current.Value.Equals(item))
+            if (current.Value.Equals(item))
             {
                 return true;
             }
@@ -41,15 +41,15 @@ public class MyLinkedList<T> : ICollection<T>
 
     public void CopyTo(T[] array, int arrayIndex)
     {
-        if(array == null)
+        if (array == null)
             throw new ArgumentNullException("array is null");
-        if(arrayIndex < 0)
+        if (arrayIndex < 0)
             throw new ArgumentOutOfRangeException("index is negative");
         if (array.Length - arrayIndex < Count)
             throw new IndexOutOfRangeException();
 
         MyLinkedListNode<T> current = Head;
-        while(current != null)
+        while (current != null)
         {
             array[arrayIndex] = current.Value;
             arrayIndex++;
@@ -60,7 +60,7 @@ public class MyLinkedList<T> : ICollection<T>
     public IEnumerator<T> GetEnumerator()
     {
         MyLinkedListNode<T> current = Head;
-        while(current != null)
+        while (current != null)
         {
             yield return current.Value;
             current = current.Next;
@@ -77,8 +77,8 @@ public class MyLinkedList<T> : ICollection<T>
 
         MyLinkedListNode<T>? prev = null;
         MyLinkedListNode<T> current = Head;
-        
-        while(current != null)
+
+        while (current != null)
         {
             if (current.Value.Equals(item))
             {
@@ -101,9 +101,9 @@ public class MyLinkedList<T> : ICollection<T>
                     prev.Next = current.Next;
                 }
 
-                    Count--;
-                    return true;
-                }
+                Count--;
+                return true;
+            }
 
             prev = current;
             current = current.Next;
@@ -166,18 +166,18 @@ public class MyLinkedList<T> : ICollection<T>
 
         MyLinkedListNode<T> temp = Head;
         Head = Head.Next;
-        
+
         temp.Next = null;
         Count--;
     }
 
     public void RemoveLast()
     {
-        if(Head == null)
+        if (Head == null)
         {
             return;
         }
-        if(Head.Next == null)
+        if (Head.Next == null)
         {
             Head = null;
             Tail = null;
@@ -185,7 +185,7 @@ public class MyLinkedList<T> : ICollection<T>
         }
 
         MyLinkedListNode<T> current = Head;
-        while( current.Next != Tail )
+        while (current.Next != Tail)
         {
             current = current.Next;
         }
@@ -211,6 +211,24 @@ public class MyLinkedList<T> : ICollection<T>
                 return list;
             }
             counter++;
+            current = current.Next;
+        }
+
+        return list;
+    }
+
+    public MyLinkedList<T> DeleteDuplicates(MyLinkedList<T> list)
+    {
+        MyLinkedListNode<T> prev = list.Head;
+        MyLinkedListNode<T> current = list.Head.Next;
+        while (current != null)
+        {
+            if (prev.Value.Equals(current.Value))
+            {
+                prev.Next = null;
+            }
+
+            prev = current;
             current = current.Next;
         }
 

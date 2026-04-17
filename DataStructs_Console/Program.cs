@@ -2,11 +2,17 @@
 using System.Linq;
 
 MyLinkedList<int> list = new MyLinkedList<int>();
+list.AddFirst(3);
+list.AddLast(1);
+list.AddLast(1);
 list.AddLast(1);
 list.AddLast(3);
+list.AddLast(3);
+list.AddLast(3);
 list.AddLast(5);
-list.AddLast(7);
-list.AddLast(9);
+list.AddLast(5);
+//list.AddLast(7);
+//list.AddLast(9);
 
 //list.RemoveFirst();
 //list.RemoveLast();
@@ -24,8 +30,9 @@ list.AddLast(9);
 
 // 2. RemoveKthNodeFromEnd
 
-MyLinkedList<int> newList = list.RemoveKthNodeFromEnd(list, 1);
+//MyLinkedList<int> newList = list.RemoveKthNodeFromEnd(list, 1);
 //Console.WriteLine(newList);
+//MyLinkedList<int> newList = list.DeleteDuplicates(list);
 
 foreach (var node in list)
     Console.WriteLine(node);
