@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.37012.4
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11626.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListLib", "LinkedListLab\LinkedListLib.csproj", "{D0E56E0C-6065-4670-8C3E-7A6C6B5BA03D}"
 EndProject
@@ -13,9 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostfixCalc", "PostfixCalc\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyQueueLib", "MyQueueLib\MyQueueLib.csproj", "{B9B163E8-4E92-4D9D-A04C-2546D9C77CBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueApp", "QueueApp\QueueApp.csproj", "{F6E1D1C1-0DD0-4C93-8ED5-304F8A93AD64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFQueueApp", "QueueApp\WPFQueueApp.csproj", "{F6E1D1C1-0DD0-4C93-8ED5-304F8A93AD64}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPriorityQueueLib", "MyPriorityQueueLib\MyPriorityQueueLib.csproj", "{5E910914-2F55-20E8-1A5B-31AA0602B7EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyArrayLib", "MyArrayLib\MyArrayLib.csproj", "{1826FA32-0A03-4BF5-A7BF-652039149C4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{5E910914-2F55-20E8-1A5B-31AA0602B7EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E910914-2F55-20E8-1A5B-31AA0602B7EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E910914-2F55-20E8-1A5B-31AA0602B7EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1826FA32-0A03-4BF5-A7BF-652039149C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1826FA32-0A03-4BF5-A7BF-652039149C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1826FA32-0A03-4BF5-A7BF-652039149C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1826FA32-0A03-4BF5-A7BF-652039149C4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
