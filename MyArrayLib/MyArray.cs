@@ -4,10 +4,11 @@ namespace MyArrayLib;
 
 public class MyArray<T> : ICollection<T>
 {
-
-    public int Count => throw new NotImplementedException();
+    public int Length { get; private set; }
 
     public bool IsReadOnly => throw new NotImplementedException();
+
+    public int Count => throw new NotImplementedException();
 
     public void Add(T item)
     {
