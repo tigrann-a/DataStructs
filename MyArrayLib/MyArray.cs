@@ -2,8 +2,9 @@
 
 namespace MyArrayLib;
 
-public class MyArray : ICollection<T>
+public class MyArray<T> : ICollection<T>
 {
+
     public int Count => throw new NotImplementedException();
 
     public bool IsReadOnly => throw new NotImplementedException();
@@ -28,12 +29,12 @@ public class MyArray : ICollection<T>
         throw new NotImplementedException();
     }
 
-    public IEnumerator<T> GetEnumerator()
+    public bool Remove(T item)
     {
         throw new NotImplementedException();
     }
 
-    public bool Remove(T item)
+    public IEnumerator<T> GetEnumerator()
     {
         throw new NotImplementedException();
     }

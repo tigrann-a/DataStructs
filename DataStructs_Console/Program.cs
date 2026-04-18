@@ -11,6 +11,8 @@ list.AddLast(3);
 list.AddLast(3);
 list.AddLast(5);
 list.AddLast(5);
+
+Console.WriteLine($"The count of list is: {list.Count}");
 //list.AddLast(7);
 //list.AddLast(9);
 
