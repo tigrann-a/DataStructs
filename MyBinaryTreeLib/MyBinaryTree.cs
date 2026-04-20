@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Collections.Specialized.BitVector32;
 
 namespace MyBinaryTreeLib
 {
@@ -103,9 +104,21 @@ namespace MyBinaryTreeLib
 
         #endregion
 
+        private IEnumerator<T>? PreOrderTraversal(Action<T> action, MyBinaryTreeNode<T> root)
+        {
+            if (root == null)
+            {
+                return null;
+            }
+
+            InOrderTraversal(action, root.Left);
+            action(root.Value);
+            InOrderTraversal(action, root.Right);
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return PreOrderTraversal(action, _root);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
