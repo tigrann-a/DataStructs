@@ -2,17 +2,32 @@
 
 namespace MyArrayLib;
 
-public class MyArray<T> : ICollection<T>
+public class MyArray<T> : IEnumerable<T>
 {
+    public MyArrayElement<T>[] myArray;
     public int Length { get; private set; }
-
-    public bool IsReadOnly => throw new NotImplementedException();
-
-    public int Count => throw new NotImplementedException();
-
-    public void Add(T item)
+    public MyArray(int length)
     {
-        throw new NotImplementedException();
+        myArray = new MyArrayElement<T>[length];
+        Length = length;
+    }
+
+    public void AddLast(MyArrayElement<T> item)
+    {
+        if (Length == 0)
+        {
+            myArray[0] = item;
+            Length++;
+            return;
+        }
+
+        MyArrayElement<T>[] newArray = new MyArrayElement<T>[Length + 1];
+        for (int i = 0; i < Length; i++)
+        {
+            newArray[i] = myArray[i];
+        }
+        newArray[Length - 1] = item;
+        myArray = newArray;
     }
 
     public void Clear()
@@ -37,7 +52,12 @@ public class MyArray<T> : ICollection<T>
 
     public IEnumerator<T> GetEnumerator()
     {
-        throw new NotImplementedException();
+        int index = 0;
+        while (myArray[index] != null)
+        {
+            yield return myArray[index].Value;
+            index++;
+        }
     }
 
     IEnumerator IEnumerable.GetEnumerator()
